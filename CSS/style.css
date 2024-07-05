@@ -1,0 +1,132 @@
+:root { /* Desclara variables para toda extructura, tiene más prioridad que html*/
+  
+          --bnavegador: #d6cf7bda;
+          --efechover:  #ffffff4d;
+          --sectorifooter: #eec886c2;
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+   .krub-regular { /* fuente importada desde Google fonts */
+    font-family: "Krub", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+  .krub-bold {
+    font-family: "Krub", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none; /* sirve para eliminar las lineas del menu */
+  }
+
+  header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+  }
+
+.header__superior {
+max-width: 1200px;  /*ancho maximo de 1200 pix*/
+margin: auto; /* para que de esta manera se nos centre */
+display: flex; /* para organizar el logo y el search */
+align-items: center; /* para centrarlo horizontalmente*/
+justify-content: space-between; /*para distribuir el logo en un lado y el search en otro lado*/
+
+}
+
+
+.logo img {   /*tamaño del logo*/
+    width: 250px; 
+
+}
+
+.search input { /*tamaño del search*/
+width: 300px;
+padding: 10px;
+
+}
+
+/*BARRA MENU */
+
+.container__menu {
+width: 100%; /*para que nos ocupe todo el ancho */
+height: 70px; /* 70 pixeles hacia abajo*/
+background: var(--bnavegador);/* se le da el color predeterminado que nos solicitaron en el ejercicio */
+padding: 0px 20px; /* para cuando se haga responsib nos guarde un margen y no choque con el inicio*/
+
+}
+
+.menu {
+max-width: 1200px; /* Tamaño max de 1200pixeles para mantener la misma linea. */
+margin:auto; /*  para que se nos centre automaticamente y tener el mismo posicionamiento */
+height: 100%; /* para posicionar los menus y  detecte el medio horizontal de la linea del menu */
+
+
+}
+
+nav {
+height: 100%; /* para poder saber el medio de documento  */
+
+}
+
+nav > ul { /* se le pone ">" para decirle que se valla directamente al "ul" que le sigue para que el submenu, tenga diferentes propiedades que el menu principal */
+height: 100%;
+display:flex; /* para organizar los listado uno al lado del otro */
+justify-content: space-evenly;
+
+}
+
+nav > ul > li { /* se le pone un height 100% para posicionalos todos en el mismo sitio.*/
+height: 100%;
+list-style: none;   /*eliminar los puntos de los menus pero no a los submenus porque utilizamos ">" en el "nav>ul>li" */    
+position: relative; /* para que el submenu se relacione on el menu. la posicion. */
+
+}
+
+
+
+nav > ul > li a{
+ width: auto;
+ height: 100%;
+ align-items: flex-start;
+ padding: 15px; /* para separar los menus lateralmente entre ellos */
+ display: flex; /* para posicionar los menus en el medio de la barra de menu */
+text-transform: uppercase; /* para poner todos los menus en MAYUSCULAS */
+
+}
+
+nav>ul>li>a:hover {
+    transform: scale(1.1); /* Esta función hace que parpadee el menu al pasar sobre él */
+    background: var(--efechover); /* se le da el efecto que se solicito en el ejercicio con dicho color */
+    
+
+}
+/*SUBMENU*/
+
+nav ul li ul{
+width: 600px;
+list-style: none;
+display: flex;
+flex-direction: column;
+position: absolute;
+top: 60px;
+left: -5px;
+padding:2px 0px;
+visibility: hidden;
+opacity: 0;
+z-index: 10;
+
+}
+
+nav ul li:hover ul{
+    list-style: none;
+visibility: visible;  
+opacity: 1;
+top: 70px;
+    }
+    
